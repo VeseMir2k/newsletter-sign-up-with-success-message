@@ -16,6 +16,7 @@
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
 
+    <link rel="stylesheet" href="style.css" />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -26,9 +27,14 @@
     <main class="main">
       <section class="newsletter">
         <img
-          class="newsletter__image"
+          class="newsletter__image-mobile"
           src="./assets/images/illustration-sign-up-mobile.svg"
           alt="illustration sign up mobile"
+        />
+        <img
+          class="newsletter__image-desktop"
+          src="./assets/images/illustration-sign-up-desktop.svg"
+          alt="illustration sign up desktop"
         />
         <div class="newsletter__wrapper">
           <h1 class="newsletter__title">Stay updated!</h1>
@@ -46,15 +52,18 @@
           </ul>
           <form class="newsletter__form newsletter-form">
             <label class="newsletter-form__email-label" for="email"
-              >Email address</label
-            >
+              ><span class="newsletter-form__email-title">Email address</span>
+              <span class="newsletter-form__email-error"></span
+            ></label>
             <input
               class="newsletter-form__email-input"
               id="email"
               type="email"
               placeholder="email@company.com"
+              pattern="/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm"
+              required
             />
-            <button type="submit" class="newsletter-form__buttonz">
+            <button type="submit" class="newsletter-form__button button">
               Subscribe to monthly newsletter
             </button>
           </form>
@@ -62,17 +71,22 @@
       </section>
 
       <section class="success-message">
-        <img
-          class="success-message__icon-success"
-          src="./assets/images/icon-success.svg"
-          alt="icon success"
-        />
-        <h2 class="success-message__title">Thanks for subscribing!</h2>
-        <p class="success-message__text">
-          A confirmation email has been sent to ash@loremcompany.com. Please
-          open it and click the button inside to confirm your subscription.
+        <div class="success-message__wrapper">
+          <img
+            class="success-message__icon-success"
+            src="./assets/images/icon-success.svg"
+            alt="icon success"
+          />
+          <h2 class="success-message__title">Thanks for subscribing!</h2>
+          <p class="success-message__text">
+            A confirmation email has been sent to
+            <strong>ash@loremcompany.com</strong>. Please open it and click the
+            button inside to confirm your subscription.
+          </p>
+        </div>
+        <button class="success-message__dismiss-button button">
           Dismiss message
-        </p>
+        </button>
       </section>
     </main>
 

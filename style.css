@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  /* Primary */
+  --tomato: hsl(4, 100%, 67%);
+  --tomato-shadow: hsl(4, 100%, 67%, 50%);
+  /* Neutral */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Gradient button */
+  --gradient-button: linear-gradient(hsl(15, 100%, 61%), hsl(346, 100%, 66%));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--charcoal-grey);
+  min-width: 100vw;
+  min-height: 100vh;
+  color: var(--dark-slate-grey);
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+}
+
+p {
+  margin: 24px 0;
+  font-size: 16px;
+  line-height: 150%;
+}
+.main {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.button {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(var(--dark-slate-grey), var(--dark-slate-grey));
+  padding: 18px 0 16px;
+  width: 100%;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.button:active {
+  box-shadow: 0 16px 32px var(--tomato-shadow);
+  background: linear-gradient(#ff6a3a, #ff527b);
+}
+
+.newsletter {
+  display: block;
+  background: var(--white);
+}
+
+.newsletter__image-mobile {
+  min-width: 100%;
+}
+
+.newsletter__image-desktop {
+  display: none;
+}
+
+.newsletter__wrapper {
+  padding: 40px 24px;
+}
+
+.newsletter__list {
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.newsletter-list__item {
+  margin-bottom: 10px;
+  background-image: url("./assets/images/icon-list.svg");
+  background-position: left 3px;
+  background-size: 21px;
+  background-repeat: no-repeat;
+  padding-left: 37px;
+  line-height: 160%;
+}
+
+.newsletter-list__item:last-child {
+  margin-bottom: 0;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-form__email-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.error {
+  color: var(--tomato);
+}
+
+.newsletter-form__email-input {
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  padding: 16px 24px;
+  font-size: 16px;
+}
+
+.newsletter-form__email-input::placeholder {
+  color: var(--grey);
+}
+.newsletter-form__email-input:focus::placeholder {
+  color: var(--dark-slate-grey);
+}
+
+.newsletter-form__email-input:focus {
+  outline: none;
+  border: 1px solid var(--dark-slate-grey);
+}
+
+.newsletter-form__button {
+  margin-top: 24px;
+}
+
+.success-message {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--white);
+  padding: 150px 24px 40px;
+  min-height: 100vh;
+}
+
+.success-message__icon-success {
+  margin-bottom: 40px;
+  width: 64px;
+  height: 64px;
+}
+
+.footer {
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newsletter {
+    display: flex;
+    align-items: center;
+    border-radius: 36px;
+    padding: 24px 24px 24px 64px;
+  }
+
+  .newsletter__image-mobile {
+    display: none;
+  }
+
+  .newsletter__image-desktop {
+    display: block;
+    order: 2;
+  }
+
+  .newsletter__wrapper {
+    padding: 0;
+    padding-right: 64px;
+    width: 400px;
+  }
+
+  .button::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s linear;
+    border-radius: 8px;
+    background: var(--gradient-button);
+    content: "";
+  }
+
+  .button:hover:after {
+    opacity: 1;
+    box-shadow: 0 16px 32px var(--tomato-shadow);
+  }
+
+  .success-message {
+    border-radius: 36px;
+    padding: 48px 64px 65px;
+    min-height: auto;
+  }
+
+  .success-message__wrapper {
+    width: 400px;
+  }
+
+  .success-message__dismiss-button {
+    margin-top: 40px;
+  }
+}
