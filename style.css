@@ -42,6 +42,7 @@ p {
   font-size: 16px;
   line-height: 150%;
 }
+
 .main {
   min-width: 100vw;
   min-height: 100vh;
@@ -115,7 +116,7 @@ p {
   font-size: 14px;
 }
 
-.error {
+.newsletter-form__email-error {
   color: var(--tomato);
 }
 
@@ -131,6 +132,23 @@ p {
 }
 .newsletter-form__email-input:focus::placeholder {
   color: var(--dark-slate-grey);
+}
+
+.newsletter-form__email-input--error {
+  border: 1px solid var(--tomato) !important;
+  background: rgba(255, 97, 85, 0.15);
+}
+
+.newsletter-form__email-input--error:focus {
+  border: 1px solid var(--tomato);
+}
+
+.newsletter-form__email-input--error::placeholder {
+  color: var(--tomato);
+}
+
+.newsletter-form__email-input--error:focus::placeholder {
+  color: var(--tomato);
 }
 
 .newsletter-form__email-input:focus {
@@ -207,6 +225,10 @@ p {
   .button:hover:after {
     opacity: 1;
     box-shadow: 0 16px 32px var(--tomato-shadow);
+  }
+
+  .button:active {
+    box-shadow: none;
   }
 
   .success-message {
