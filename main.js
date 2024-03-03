@@ -9,6 +9,10 @@ const successMessageEmailStrong = document.querySelector(
   ".success-message__email-strong"
 );
 
+const successMessageDismissButton = document.querySelector(
+  ".success-message__dismiss-button"
+);
+
 const emailRegex =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -32,4 +36,9 @@ buttonSubmit.addEventListener("click", (event) => {
     emailErrorElement.textContent = "";
     emailInput.value = "";
   }
+});
+
+successMessageDismissButton.addEventListener("click", () => {
+  newsletterElement.style.display = "flex";
+  successMessageElement.style.display = "none";
 });
